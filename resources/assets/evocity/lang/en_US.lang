@@ -1,0 +1,20 @@
+#Blocks
+tile.GuanoBox.name=Guano Box
+tile.GasPump.name=Gas Pump
+tile.BBerryPlant.name=BlueBerry Plant
+tile.OGPlant.name=OG Kush Plant
+
+#Items
+item.PoliceBaton.name=Police Baton
+item.GasCard.name=Gas Card
+
+item.BBerrySeeds.name=BlueBerry Seeds
+item.BBerryBudWet.name=Wet BlueBerry Bud
+item.BBerryBud.name=Dry BlueBerry Bud
+
+item.OGSeeds.name=OG Kush Seeds
+item.OGBudWet.name=Wet OG Kush Bud
+item.OGBud.name=Dry OG Kush Bud
+
+#CreativeTab
+itemGroup.EvoTab=Evo Tab
