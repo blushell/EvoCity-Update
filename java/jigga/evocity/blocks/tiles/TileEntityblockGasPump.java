@@ -4,6 +4,5 @@ import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityblockGasPump extends TileEntity {
 
-	public int direction;
 	
 }

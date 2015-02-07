@@ -5,10 +5,13 @@ import jigga.evocity.blocks.tiles.TileEntityGrowPot;
 import jigga.evocity.lib.ModInfo;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -51,13 +54,16 @@ public class GrowPotBlock extends BlockContainer {
 	}
 	
 	@Override
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack stack)
-	{
-	if (entity == null)
-	{
-	return;
-	}
-  }
+	public void onBlockAdded(World world, int i, int j, int k){
+		EntityPlayer entity = Minecraft.getMinecraft().thePlayer;
+		if(entity!=null&&world!=null){
+		int le = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+		world.setBlockMetadataWithNotify(i, j, k, le, 2);
+		}
+
+		world.scheduleBlockUpdate(i, j, k, this, this.tickRate(world));
+
+		}
 }
 
 

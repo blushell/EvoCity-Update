@@ -1,6 +1,11 @@
 #Blocks
 tile.GuanoBox.name=Guano Box
 tile.GasPump.name=Gas Pump
+tile.VendingMachine.name=Vending Machine
+tile.GrowPot.name=Grow Pot
+tile.GrowLight.name=Grow Light
+
+#Plants
 tile.BBerryPlant.name=BlueBerry Plant
 tile.OGPlant.name=OG Kush Plant
 

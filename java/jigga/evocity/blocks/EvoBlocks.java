@@ -2,7 +2,9 @@ package jigga.evocity.blocks;
 
 import jigga.evocity.blocks.crops.BBPlantCrop;
 import jigga.evocity.blocks.crops.OGPlantCrop;
+import jigga.evocity.blocks.tiles.TileEntityGrowLight;
 import jigga.evocity.blocks.tiles.TileEntityGrowPot;
+import jigga.evocity.blocks.tiles.TileEntityPilon;
 import jigga.evocity.blocks.tiles.TileEntityVendingMachine;
 import jigga.evocity.blocks.tiles.TileEntityblockGasPump;
 import jigga.evocity.lib.ModInfo;
@@ -16,6 +18,8 @@ public class EvoBlocks {
 	public static Block GasPumpBlock;
 	public static Block VendingMachineBlock;
 	public static Block GrowPotBlock;
+	public static Block GrowLightBlock;
+	public static Block BlockPilon;
 	
 	//Blueberry Kush
 	public static Block BBerryPlant;
@@ -38,13 +42,20 @@ public class EvoBlocks {
 		GameRegistry.registerBlock(GasPumpBlock, "GasPump");
 		 GameRegistry.registerTileEntity(TileEntityblockGasPump.class, "tileEntityGasPump");
 		 
-		 VendingMachineBlock = new VendingMachineBlock(Material.iron).setBlockName("VendingMachine");
+		VendingMachineBlock = new VendingMachineBlock(Material.iron).setBlockName("VendingMachine");
 			GameRegistry.registerBlock(VendingMachineBlock, "VendingMachine");
-			 GameRegistry.registerTileEntity(TileEntityVendingMachine.class, "tileEntityVendingMachine");
+			GameRegistry.registerTileEntity(TileEntityVendingMachine.class, "tileEntityVendingMachine");
 			 
-			 GrowPotBlock = new GrowPotBlock(Material.sand).setBlockName("GrowPot");
-			 GameRegistry.registerBlock(GrowPotBlock, "GrowPot");
-			  GameRegistry.registerTileEntity(TileEntityGrowPot.class, "tileEntityGrowPot");
+	    GrowPotBlock = new GrowPotBlock(Material.sand).setBlockName("GrowPot");
+			GameRegistry.registerBlock(GrowPotBlock, "GrowPot");
+			GameRegistry.registerTileEntity(TileEntityGrowPot.class, "tileEntityGrowPot");
+			
+			GrowLightBlock = new GrowLightBlock(Material.iron).setBlockName("GrowLight");
+				GameRegistry.registerBlock(GrowLightBlock, "GrowLight");
+				GameRegistry.registerTileEntity(TileEntityGrowLight.class, "tileEntityGrowLight");
 		
+				BlockPilon = new BlockPilon(Material.iron).setBlockName("Pilon");
+				GameRegistry.registerBlock(BlockPilon, "Pilon");
+				GameRegistry.registerTileEntity(TileEntityPilon.class, "tileEntityPilon");
 	}
 }

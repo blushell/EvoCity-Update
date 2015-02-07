@@ -4,6 +4,4 @@ import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityVendingMachine extends TileEntity {
 
-	public int direction;
-	
 }

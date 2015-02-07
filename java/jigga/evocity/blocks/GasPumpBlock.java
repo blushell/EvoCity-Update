@@ -6,6 +6,7 @@ import jigga.evocity.items.EvoItems;
 import jigga.evocity.lib.ModInfo;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,13 +22,10 @@ public class GasPumpBlock extends BlockContainer  {
 
 	public GasPumpBlock(Material material) {
 		super(material);
-		
-		this.setHardness(5.0F);
-		this.setResistance(5.0F);
 		this.setStepSound(soundTypeMetal);
 		this.setCreativeTab(EvoCity.EvoTab);
-		this.setBlockBounds(0F, 0F, 0F, 1F, 2.0F, 1F);
-		this.setLightLevel(0.5F);
+		this.setBlockBounds(0F, 0F, 0F, 1F, 2.5F, 1F);
+		this.setLightLevel(8.0F);
 	}
 	
 	public int getRenderType() {
@@ -54,17 +52,16 @@ public class GasPumpBlock extends BlockContainer  {
 	}
 	
 	@Override
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack stack)
-	{
-	if (entity == null)
-	{
-	return;
-	}
+	public void onBlockAdded(World world, int i, int j, int k){
+		EntityPlayer entity = Minecraft.getMinecraft().thePlayer;
+		if(entity!=null&&world!=null){
+		int le = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+		world.setBlockMetadataWithNotify(i, j, k, le, 2);
+		}
 
-	TileEntityblockGasPump tile = (TileEntityblockGasPump) world.getTileEntity(x, y, z);
-	tile.direction = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
-	}
-	
+		world.scheduleBlockUpdate(i, j, k, this, this.tickRate(world));
+
+		}
 	
 	public boolean onBlockActivated(World world, int i, int j, int k, EntityPlayer entity, int l, float m, float n, float o){
 
