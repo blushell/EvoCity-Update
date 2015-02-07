@@ -3,7 +3,6 @@
 
 
 ToDo List:
-- Fix Custom Block Rotation to remember where its placed *
 - Star Gui System *
 - gain star when you attack player
 - lose 1 star when you die
@@ -11,4 +10,5 @@ ToDo List:
 
 
 Finish Drugs
+
 Finish Decor
